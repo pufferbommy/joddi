@@ -1,7 +1,7 @@
 export const GET = () => {
   const params = new URLSearchParams({
     client_id: process.env.GOOGLE_CLIENT_ID as string,
-    redirect_uri: "https://ct4v085j-3000.asse.devtunnels.ms/api/google/callback",
+    redirect_uri: `${process.env.BASE_URL}/api/google/callback`,
     response_type: "code",
     scope: "https://www.googleapis.com/auth/userinfo.email",
     access_type: "offline",
