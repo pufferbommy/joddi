@@ -15,12 +15,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon } from "lucide-react"
+import { WalletIcon, PieChartIcon, ReceiptIcon, TrendingUpIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, PiggyBankIcon, TargetIcon } from "lucide-react"
+import Link from "next/link"
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "User",
+    email: "user@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
@@ -28,95 +29,78 @@ const data = {
       title: "Dashboard",
       url: "#",
       icon: (
-        <LayoutDashboardIcon
-        />
+        <WalletIcon />
       ),
     },
     {
-      title: "Lifecycle",
+      title: "Expenses",
       url: "#",
       icon: (
-        <ListIcon
-        />
+        <ReceiptIcon />
       ),
     },
     {
-      title: "Analytics",
+      title: "Budget",
       url: "#",
       icon: (
-        <ChartBarIcon
-        />
+        <PiggyBankIcon />
       ),
     },
     {
-      title: "Projects",
+      title: "Reports",
       url: "#",
       icon: (
-        <FolderIcon
-        />
+        <PieChartIcon />
       ),
     },
     {
-      title: "Team",
+      title: "Goals",
       url: "#",
       icon: (
-        <UsersIcon
-        />
+        <TargetIcon />
       ),
     },
   ],
   navClouds: [
     {
-      title: "Capture",
+      title: "This Month",
       icon: (
-        <CameraIcon
-        />
+        <TrendingUpIcon />
       ),
       isActive: true,
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "All Expenses",
           url: "#",
         },
         {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: (
-        <FileTextIcon
-        />
-      ),
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
+          title: "By Category",
           url: "#",
         },
       ],
     },
     {
-      title: "Prompts",
+      title: "Categories",
       icon: (
-        <FileTextIcon
-        />
+        <PieChartIcon />
       ),
       url: "#",
       items: [
         {
-          title: "Active Proposals",
+          title: "Food",
           url: "#",
         },
         {
-          title: "Archived",
+          title: "Housing",
+          url: "#",
+        },
+        {
+          title: "Transportation",
+          url: "#",
+        },
+        {
+          title: "Utilities",
           url: "#",
         },
       ],
@@ -127,50 +111,37 @@ const data = {
       title: "Settings",
       url: "#",
       icon: (
-        <Settings2Icon
-        />
+        <Settings2Icon />
       ),
     },
     {
       title: "Get Help",
       url: "#",
       icon: (
-        <CircleHelpIcon
-        />
+        <CircleHelpIcon />
       ),
     },
     {
       title: "Search",
       url: "#",
       icon: (
-        <SearchIcon
-        />
+        <SearchIcon />
       ),
     },
   ],
   documents: [
     {
-      name: "Data Library",
+      name: "Export Data",
       url: "#",
       icon: (
-        <DatabaseIcon
-        />
+        <DatabaseIcon />
       ),
     },
     {
       name: "Reports",
       url: "#",
       icon: (
-        <FileChartColumnIcon
-        />
-      ),
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: (
-        <FileIcon
-        />
+        <PiggyBankIcon />
       ),
     },
   ],
@@ -183,10 +154,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               className="data-[slot=sidebar-menu-button]:p-1.5!"
-              render={<a href="#" />}
+              render={<Link href="/" />}
             >
-              <CommandIcon className="size-5!" />
-              <span className="text-base font-semibold">Acme Inc.</span>
+              <WalletIcon className="size-5!" />
+              <span className="text-base font-semibold">Joddi</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
